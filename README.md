@@ -1,7 +1,5 @@
 #XNInterface
 
-*Important Note: This readme pertains to the Develop branch of this repository only. Please use that branch for the latest version of the library.*
-
 XNInterface is a GUI library for XNA 4.0, and is compatible and tested with Windows and WP7. (It may be compatible with the XBOX however this has not been tested - let me know if it works for you!)
 
 ##Usage
