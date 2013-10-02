@@ -15,7 +15,6 @@ namespace XNInterface.Core
             get { return _x; }
             set
             {
-                if (value == _x) return;
                 if (XType == Vec2ValueType.Percentage)
                 {
                     if (value > 1)
@@ -37,7 +36,6 @@ namespace XNInterface.Core
             get { return _y; }
             set
             {
-                if (value == _y) return;
                 if (YType == Vec2ValueType.Percentage)
                 {
                     if (value > 1)
