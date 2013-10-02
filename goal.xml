@@ -37,7 +37,6 @@
 	Texture can be defined inline (in src) or in a resource.
 	Image controls can define a Region in the format "x,y,width,height"
 	No Region will result in the entire texture being rendered.
-	Regions are only in pixels.
 
 	Width and Height can be absolute (pixels) or relative (percentage), a relative value is defined by the % symbol.
 	HAlign can be: left, center, right.
