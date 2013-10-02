@@ -10,7 +10,7 @@
 	</Resources>
 
 	<Button Name="btnTest" Template="buttonTemplate" Content="hello!" HAlign="Center" VAlign="Top" />
-	<TextBlock Content="Some text!" Font="otherfont" />
+	<TextBlock Content="Some text!" Font="otherfont" Color="#000000" />
 </Window>
 
 <!--
@@ -34,6 +34,7 @@
 		PARENTVALUE (ToString() of float value on parent control)
 	By DEFAULT, Format is set to CONTENT
 	The font of the textblock can be defined as a resource, or defined inline
+  TextBlock can take a Color attribute with a rgb hexcode (#RRGGBB) value. (ideally would like to also support word colors)
 	
 	Image controls have a source (src), which defines the Texture to render. 
 	Texture can be defined inline (in src) or in a resource.
