@@ -1,19 +1,21 @@
-<?xml version="1.0" encoding="utf8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Window>
 	<Resources>
 		<Template Name="buttonTemplate">
 			<Image src="ButtonBackground.png" Width="200" Height="100" Region="0, 50, 200, 100" />
 			<TextBlock Font="textFont" Format="Button {content} {PARENTCONTENT}" Content="says" />
 		</Template>
-		<Font Name="textFont" src="thefont.spritefont" />
+		<Font Name="textFont" src="thefont" />
 		<Texture
 	</Resources>
 
 	<Button Name="btnTest" Template="buttonTemplate" Content="hello!" HAlign="Center" VAlign="Top" />
-	<TextBlock Content="Some text!" Font="otherfont.spritefont" />
+	<TextBlock Content="Some text!" Font="otherfont" />
 </Window>
 
 <!--
+  Special XNA Platform Note: The XNA loader will remove file extensions from images/fonts, and assume they have already been compiled.
+  
 	The resources node contains all templates and predefined items like fonts.
 	Fonts have a src attribute which defines either the .spritefont file, or whatever is relevant for the platform.
 	ALL Resources MUST have a Name attribute that is not whitespace.
