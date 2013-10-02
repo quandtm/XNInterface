@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf8"?>
+<Window>
+	<Template Name="buttonTemplate">
+		<Texture src="ButtonBackground.png" Width="200" Height="100" />
+		<TextBlock Format="Button {content} {PARENTCONTENT}" Content="says" />
+	</Template>
+
+	<Button Name="btnTest" Template="buttonTemplate" Content="hello!" HAlign="Center" VAlign="Top" />
+</Window>
+
+<!--
+	In this sample, a button should be created with a textured background, and text that says "Button says hello!".
+	This is bound to the button using the Template named buttonTemplate. Templates are used at compile time only.
+	The Template attribute defines which template to use, and that template replaces all child controls for that control.
+	The Template itself defines the child controls.
+
+	The Format attribute in the TextBlock defines a string of literals and variables that is constructed at runtime.
+	The following variable options are available:
+		CONTENT (string content of the current control)
+		PARENTCONTENT (string content of the parent control)
+		VALUE (ToString() of float value on current control)
+		PARENTVALUE (ToString() of float value on parent control)
+
+	Width and Height can be absolute (pixels) or relative (percentage), a relative value is defined by the % symbol.
+	HAlign can be: left, center, right.
+	VAlign can be: top, middle, bottom.
+
+	Rendering order is defined by the order of the controls in the document, so controls defined earlier will be
+		rendered below controls specified later, child controls are considered to be part of the parent control for this.
+	
+	The Button control has logic functionality that the other controls do not have, namely pointer events.
+
+	The StackPanel control allows for vertical or horizontal stacking of controls
+		The direction is defined with the Orientation attribute, which can be Vertical or Horizontal.
+-->
