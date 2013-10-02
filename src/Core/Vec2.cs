@@ -1,6 +1,8 @@
+using System;
+
 namespace XNInterface.Core
 {
-    public sealed class Vec2
+    public sealed class Vec2 : IEquatable<Vec2>
     {
         public enum Vec2ValueType : short
         {
@@ -94,6 +96,38 @@ namespace XNInterface.Core
         public void Calculate(Vec2 owner)
         {
             Calculate(owner.RealX, owner.RealY);
+        }
+
+        public bool Equals(Vec2 other)
+        {
+            bool xEqual = other.XType == XType && other.X == X;
+            bool yEqual = other.YType == YType && other.Y == Y;
+            return xEqual && yEqual;
+        }
+
+        public static bool operator ==(Vec2 a, Vec2 b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Vec2 a, Vec2 b)
+        {
+            return !a.Equals(b);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("RealX={0} RealY={1}", RealX, RealY);
         }
     }
 }

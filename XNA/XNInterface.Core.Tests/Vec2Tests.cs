@@ -75,5 +75,29 @@ namespace XNInterface.Core.Tests
             Assert.AreEqual(0, v.RealX);
             Assert.AreEqual(1, v.RealY);
         }
+
+        [TestMethod]
+        public void TestEquality()
+        {
+            var v1 = new Vec2(5, 7);
+            var v2 = new Vec2(5, 7);
+            Assert.IsTrue(v1.Equals(v2));
+        }
+
+        [TestMethod]
+        public void TestEqualityPercentage()
+        {
+            var v1 = new Vec2(5, Vec2.Vec2ValueType.Absolute, 0.5f, Vec2.Vec2ValueType.Percentage);
+            var v2 = new Vec2(5, Vec2.Vec2ValueType.Absolute, 0.5f, Vec2.Vec2ValueType.Percentage);
+            Assert.IsTrue(v1.Equals(v2));
+        }
+
+        [TestMethod]
+        public void TestEqualityFalse()
+        {
+            var v1 = new Vec2(5, Vec2.Vec2ValueType.Absolute, 0.5f, Vec2.Vec2ValueType.Percentage);
+            var v2 = new Vec2(5, Vec2.Vec2ValueType.Absolute, 0.5f, Vec2.Vec2ValueType.Absolute);
+            Assert.IsFalse(v1.Equals(v2));
+        }
     }
 }
