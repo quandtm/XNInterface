@@ -70,6 +70,11 @@ namespace XNInterface.Core
         {
         }
 
+        public Vec2(float x, float y, Vec2ValueType xyType)
+            : this(x, xyType, y, xyType)
+        {
+        }
+
         public Vec2(float x, Vec2ValueType xtype, float y, Vec2ValueType ytype)
         {
             XType = xtype;
