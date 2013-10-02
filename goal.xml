@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf8"?>
 <Window>
-	<Template Name="buttonTemplate">
-		<Texture src="ButtonBackground.png" Width="200" Height="100" />
-		<TextBlock Format="Button {content} {PARENTCONTENT}" Content="says" />
-	</Template>
+	<Resources>
+		<Template Name="buttonTemplate">
+			<Image src="ButtonBackground.png" Width="200" Height="100" Region="0, 50, 200, 100" />
+			<TextBlock Font="textFont" Format="Button {content} {PARENTCONTENT}" Content="says" />
+		</Template>
+		<Font Name="textFont" src="thefont.spritefont" />
+		<Texture
+	</Resources>
 
 	<Button Name="btnTest" Template="buttonTemplate" Content="hello!" HAlign="Center" VAlign="Top" />
+	<TextBlock Content="Some text!" Font="otherfont.spritefont" />
 </Window>
 
 <!--
+	The resources node contains all templates and predefined items like fonts.
+	Fonts have a src attribute which defines either the .spritefont file, or whatever is relevant for the platform.
+	ALL Resources MUST have a Name attribute that is not whitespace.
+	Names are optional for all other nodes.
+	
 	In this sample, a button should be created with a textured background, and text that says "Button says hello!".
 	This is bound to the button using the Template named buttonTemplate. Templates are used at compile time only.
 	The Template attribute defines which template to use, and that template replaces all child controls for that control.
@@ -20,6 +30,14 @@
 		PARENTCONTENT (string content of the parent control)
 		VALUE (ToString() of float value on current control)
 		PARENTVALUE (ToString() of float value on parent control)
+	By DEFAULT, Format is set to CONTENT
+	The font of the textblock can be defined as a resource, or defined inline
+	
+	Image controls have a source (src), which defines the Texture to render. 
+	Texture can be defined inline (in src) or in a resource.
+	Image controls can define a Region in the format "x,y,width,height"
+	No Region will result in the entire texture being rendered.
+	Regions are only in pixels.
 
 	Width and Height can be absolute (pixels) or relative (percentage), a relative value is defined by the % symbol.
 	HAlign can be: left, center, right.
