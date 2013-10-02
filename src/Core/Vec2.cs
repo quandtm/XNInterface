@@ -117,7 +117,9 @@ namespace XNInterface.Core
 
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (obj is Vec2)
+                return ((Vec2)obj).Equals(this);
+            return false;
         }
 
         public override int GetHashCode()
