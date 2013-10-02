@@ -6,3 +6,5 @@ It uses an XML format to define the interface, with an offline processor to conv
 The develop branch is currently a reboot of the project, taking into account previous learnings while considering the cross-platform requirement that now exists. As such if you're looking for a functional version, please take a look at the **master** branch which contains the latest XNA version. (Known to work on Windows and WP7)
 
 Disclaimer: I'm currently busy with university and so there may be no progress at times in this branch. All code currently in this branch is pre-alpha and while you may use it (any extensions are welcome through pull requests), I cannot provide any support.
+
+[https://trello.com/b/eGvG379x](https://trello.com/b/eGvG379x) has the currently planned list of features, and tracks progress.
