@@ -8,8 +8,52 @@ namespace XNInterface.Core
             Percentage
         }
 
-        public float X { get; set; }
-        public float Y { get; set; }
+        private float _x, _y;
+
+        public float X
+        {
+            get { return _x; }
+            set
+            {
+                if (value == _x) return;
+                if (XType == Vec2ValueType.Percentage)
+                {
+                    if (value > 1)
+                    {
+                        _x = 1;
+                        return;
+                    }
+                    if (value < 0)
+                    {
+                        _x = 0;
+                        return;
+                    }
+                }
+                _x = value;
+            }
+        }
+        public float Y
+        {
+            get { return _y; }
+            set
+            {
+                if (value == _y) return;
+                if (YType == Vec2ValueType.Percentage)
+                {
+                    if (value > 1)
+                    {
+                        _y = 1;
+                        return;
+                    }
+                    if (value < 0)
+                    {
+                        _y = 0;
+                        return;
+                    }
+                }
+                _y = value;
+            }
+        }
         public Vec2ValueType XType { get; set; }
         public Vec2ValueType YType { get; set; }
 
@@ -22,7 +66,7 @@ namespace XNInterface.Core
         }
 
         public Vec2(float absX, float absY)
-            : this(absX, Vec2ValueType.Absolute, absY, Vec2ValueType.Percentage)
+            : this(absX, Vec2ValueType.Absolute, absY, Vec2ValueType.Absolute)
         {
         }
 
@@ -32,6 +76,8 @@ namespace XNInterface.Core
             YType = ytype;
             X = x;
             Y = y;
+            RealX = X;
+            RealY = Y;
         }
 
         public void Calculate(float parentWidth, float parentHeight)
