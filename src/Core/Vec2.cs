@@ -22,15 +22,18 @@ namespace XNInterface.Core
                     if (value > 1)
                     {
                         _x = 1;
+                        RealX = _x;
                         return;
                     }
                     if (value < 0)
                     {
                         _x = 0;
+                        RealX = _x;
                         return;
                     }
                 }
                 _x = value;
+                RealX = _x;
             }
         }
         public float Y
@@ -43,19 +46,44 @@ namespace XNInterface.Core
                     if (value > 1)
                     {
                         _y = 1;
+                        RealY = _y;
                         return;
                     }
                     if (value < 0)
                     {
                         _y = 0;
+                        RealY = _y;
                         return;
                     }
                 }
                 _y = value;
+                RealY = _y;
             }
         }
-        public Vec2ValueType XType { get; set; }
-        public Vec2ValueType YType { get; set; }
+
+        private Vec2ValueType _xType, _yType;
+
+        public Vec2ValueType XType
+        {
+            get { return _xType; }
+            set
+            {
+                if (_xType == value) return;
+                _xType = value;
+                X = _x;
+            }
+        }
+
+        public Vec2ValueType YType
+        {
+            get { return _yType; }
+            set
+            {
+                if (_yType == value) return;
+                _yType = value;
+                Y = _y;
+            }
+        }
 
         public float RealX { get; private set; }
         public float RealY { get; private set; }
