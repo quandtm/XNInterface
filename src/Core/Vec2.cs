@@ -82,12 +82,12 @@ namespace XNInterface.Core
 
         public void Calculate(float parentWidth, float parentHeight)
         {
-            if (XType == Vec2ValueType.Absolute)
+            if (parentWidth <= 0 || XType == Vec2ValueType.Absolute)
                 RealX = X;
             else
                 RealX = parentWidth * X;
 
-            if (YType == Vec2ValueType.Absolute)
+            if (parentHeight <= 0 || YType == Vec2ValueType.Absolute)
                 RealY = Y;
             else
                 RealY = parentHeight * Y;

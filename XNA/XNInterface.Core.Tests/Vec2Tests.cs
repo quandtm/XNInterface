@@ -66,5 +66,14 @@ namespace XNInterface.Core.Tests
             Assert.AreEqual(0, v.RealX);
             Assert.AreEqual(100, v.RealY);
         }
+
+        [TestMethod]
+        public void TestBadParentSize()
+        {
+            var v = new Vec2(-0.6f, Vec2.Vec2ValueType.Percentage, 1.2f, Vec2.Vec2ValueType.Percentage);
+            v.Calculate(-50, 0);
+            Assert.AreEqual(0, v.RealX);
+            Assert.AreEqual(1, v.RealY);
+        }
     }
 }
