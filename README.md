@@ -1,3 +1,5 @@
+#This project is no longer in development, and is no longer supported.
+
 #XNInterface
 
 XNInterface is a GUI library for XNA 4.0, and is compatible and tested with Windows and WP7. (It may be compatible with the XBOX however this has not been tested - let me know if it works for you!)
